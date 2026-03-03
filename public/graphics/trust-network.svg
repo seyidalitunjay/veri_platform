@@ -1,0 +1,40 @@
+<svg width="800" height="560" viewBox="0 0 800 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="560" rx="28" fill="url(#bg)"/>
+  <rect x="78" y="118" width="236" height="308" rx="28" fill="#133255" stroke="#2D517C"/>
+  <rect x="486" y="118" width="236" height="308" rx="28" fill="#133255" stroke="#2D517C"/>
+  <circle cx="400" cy="274" r="74" fill="url(#coreGlow)"/>
+  <circle cx="400" cy="274" r="42" fill="#173B61" stroke="#9FC8FF" stroke-width="2"/>
+  <circle cx="176" cy="188" r="12" fill="#A7CCFF" fill-opacity="0.7"/>
+  <circle cx="176" cy="274" r="12" fill="#A7CCFF" fill-opacity="0.7"/>
+  <circle cx="176" cy="360" r="12" fill="#A7CCFF" fill-opacity="0.7"/>
+  <circle cx="624" cy="188" r="12" fill="#A7CCFF" fill-opacity="0.7"/>
+  <circle cx="624" cy="274" r="12" fill="#A7CCFF" fill-opacity="0.7"/>
+  <circle cx="624" cy="360" r="12" fill="#A7CCFF" fill-opacity="0.7"/>
+  <path d="M188 188H304C342 188 358 234 400 234" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M188 274H358" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M188 360H304C342 360 358 314 400 314" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M442 234H496C536 234 554 188 612 188" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M442 274H612" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M442 314H496C536 314 554 360 612 360" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
+  <rect x="122" y="173" width="34" height="30" rx="10" fill="#B8D7FF" fill-opacity="0.16"/>
+  <rect x="122" y="259" width="34" height="30" rx="10" fill="#B8D7FF" fill-opacity="0.16"/>
+  <rect x="122" y="345" width="34" height="30" rx="10" fill="#B8D7FF" fill-opacity="0.16"/>
+  <rect x="644" y="166" width="42" height="44" rx="12" fill="#B8D7FF" fill-opacity="0.16"/>
+  <rect x="644" y="252" width="42" height="44" rx="12" fill="#B8D7FF" fill-opacity="0.16"/>
+  <rect x="644" y="338" width="42" height="44" rx="12" fill="#B8D7FF" fill-opacity="0.16"/>
+  <defs>
+    <linearGradient id="bg" x1="400" y1="0" x2="400" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#15365B"/>
+      <stop offset="1" stop-color="#091C32"/>
+    </linearGradient>
+    <radialGradient id="coreGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 274) rotate(90) scale(96)">
+      <stop stop-color="#A7CCFF" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#A7CCFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="188" y1="274" x2="612" y2="274" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FB4FF" stop-opacity="0.12"/>
+      <stop offset="0.5" stop-color="#A7CCFF"/>
+      <stop offset="1" stop-color="#7FB4FF" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+</svg>

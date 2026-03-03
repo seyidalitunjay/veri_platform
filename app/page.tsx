@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const mainContact = {
@@ -190,7 +191,7 @@ export default function Home() {
           className="section-shell hero-grid overflow-hidden rounded-[2rem] px-6 py-10 md:px-10 md:py-14"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(110,168,255,0.18),_transparent_34%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.1),_transparent_26%)]" />
-          <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_380px] lg:items-end">
+          <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_420px] lg:items-end">
             <div className="fade-in-up">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/6 px-4 py-2 text-xs uppercase tracking-[0.28em] text-white/70">
                 <span className="h-2 w-2 rounded-full bg-[#9ec5ff]" />
@@ -240,41 +241,76 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="fade-in-up delay-2 rounded-[1.75rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.03))] p-6 shadow-[0_28px_80px_rgba(1,9,20,0.45)]">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#9ec5ff]">
-                Positioning
-              </p>
-              <p className="mt-4 text-2xl font-medium leading-9 text-white">
-                A practical trust layer between workers and the institutions
-                that need better evidence.
-              </p>
-              <div className="mt-8 space-y-4 border-t border-white/10 pt-6">
-                <div className="flex items-start justify-between gap-4">
-                  <p className="text-sm text-white/55">Focus</p>
-                  <p className="max-w-[14rem] text-right text-sm text-white/78">
-                    Informal and underserved workers
-                  </p>
+            <div className="grid gap-4">
+              <aside className="fade-in-up delay-2 rounded-[1.75rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.03))] p-6 shadow-[0_28px_80px_rgba(1,9,20,0.45)]">
+                <p className="text-xs uppercase tracking-[0.28em] text-[#9ec5ff]">
+                  Positioning
+                </p>
+                <p className="mt-4 text-2xl font-medium leading-9 text-white">
+                  A practical trust layer between workers and the institutions
+                  that need better evidence.
+                </p>
+                <div className="mt-8 space-y-4 border-t border-white/10 pt-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <p className="text-sm text-white/55">Focus</p>
+                    <p className="max-w-[14rem] text-right text-sm text-white/78">
+                      Informal and underserved workers
+                    </p>
+                  </div>
+                  <div className="flex items-start justify-between gap-4">
+                    <p className="text-sm text-white/55">Design principle</p>
+                    <p className="max-w-[14rem] text-right text-sm text-white/78">
+                      Validation before record creation
+                    </p>
+                  </div>
+                  <div className="flex items-start justify-between gap-4">
+                    <p className="text-sm text-white/55">Initial region</p>
+                    <p className="max-w-[14rem] text-right text-sm text-white/78">
+                      Europe and Central Asia
+                    </p>
+                  </div>
+                  <div className="flex items-start justify-between gap-4">
+                    <p className="text-sm text-white/55">Current stage</p>
+                    <p className="max-w-[14rem] text-right text-sm text-white/78">
+                      Concept definition and pilot preparation
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-start justify-between gap-4">
-                  <p className="text-sm text-white/55">Design principle</p>
-                  <p className="max-w-[14rem] text-right text-sm text-white/78">
-                    Validation before record creation
-                  </p>
+              </aside>
+
+              <div className="grid gap-4 fade-in-up delay-3">
+                <div className="rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-4 shadow-[0_20px_60px_rgba(1,9,20,0.24)]">
+                  <Image
+                    src="/graphics/verification-flow.svg"
+                    alt="Abstract illustration of a validation workflow"
+                    width={800}
+                    height={560}
+                    className="h-auto w-full rounded-[1.2rem]"
+                    priority
+                  />
                 </div>
-                <div className="flex items-start justify-between gap-4">
-                  <p className="text-sm text-white/55">Initial region</p>
-                  <p className="max-w-[14rem] text-right text-sm text-white/78">
-                    Europe and Central Asia
-                  </p>
-                </div>
-                <div className="flex items-start justify-between gap-4">
-                  <p className="text-sm text-white/55">Current stage</p>
-                  <p className="max-w-[14rem] text-right text-sm text-white/78">
-                    Concept definition and pilot preparation
-                  </p>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4">
+                    <Image
+                      src="/graphics/record-stack.svg"
+                      alt="Abstract illustration of portable digital records"
+                      width={800}
+                      height={560}
+                      className="h-auto w-full rounded-[1rem]"
+                    />
+                  </div>
+                  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4">
+                    <Image
+                      src="/graphics/trust-network.svg"
+                      alt="Abstract illustration of institutions connected by trusted records"
+                      width={800}
+                      height={560}
+                      className="h-auto w-full rounded-[1rem]"
+                    />
+                  </div>
                 </div>
               </div>
-            </aside>
+            </div>
           </div>
         </section>
 
@@ -342,24 +378,78 @@ export default function Home() {
                 </p>
               </article>
               <div className="grid gap-4 md:grid-cols-2">
-                <article className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 fade-in-up delay-2">
-                  <h3 className="text-lg font-medium text-white">
-                    Trust built into the workflow
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-white/68">
-                    Proof is generated from completed and validated activity,
-                    not from claims alone.
+                <article className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4 fade-in-up delay-2">
+                  <Image
+                    src="/graphics/record-stack.svg"
+                    alt="Abstract illustration of verified record layers"
+                    width={800}
+                    height={560}
+                    className="h-auto w-full rounded-[1rem]"
+                  />
+                  <p className="mt-4 text-sm leading-7 text-white/68">
+                    A record structure that feels durable, legible, and portable
+                    across decision contexts.
                   </p>
                 </article>
-                <article className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 fade-in-up delay-3">
-                  <h3 className="text-lg font-medium text-white">
-                    Ownership stays with the worker
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-white/68">
-                    The record is designed to be portable across contexts rather
-                    than trapped in a single employer or programme system.
+                <article className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4 fade-in-up delay-3">
+                  <Image
+                    src="/graphics/trust-network.svg"
+                    alt="Abstract illustration of a trusted institutional network"
+                    width={800}
+                    height={560}
+                    className="h-auto w-full rounded-[1rem]"
+                  />
+                  <p className="mt-4 text-sm leading-7 text-white/68">
+                    A visual language for trust passing cleanly between field
+                    work, records, and institutional review.
                   </p>
                 </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-shell overflow-hidden rounded-[2rem] px-6 py-10 md:px-10 md:py-12">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
+            <div className="fade-in-up">
+              <p className="section-label">Concept Visual</p>
+              <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.04em] text-white md:text-5xl">
+                A system shape designed to feel structured, calm, and credible.
+              </h2>
+              <p className="mt-6 max-w-xl text-base leading-8 text-white/72">
+                These original visuals are abstract by design. They reinforce
+                the ideas of verification, record-building, and institutional
+                trust without implying live data, deployment, or numeric claims.
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4 fade-in-up delay-1">
+                <Image
+                  src="/graphics/verification-flow.svg"
+                  alt="Abstract workflow visual"
+                  width={800}
+                  height={560}
+                  className="h-auto w-full rounded-[1rem]"
+                />
+              </div>
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4 fade-in-up delay-2">
+                <Image
+                  src="/graphics/record-stack.svg"
+                  alt="Abstract record visual"
+                  width={800}
+                  height={560}
+                  className="h-auto w-full rounded-[1rem]"
+                />
+              </div>
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-4 fade-in-up delay-3">
+                <Image
+                  src="/graphics/trust-network.svg"
+                  alt="Abstract network visual"
+                  width={800}
+                  height={560}
+                  className="h-auto w-full rounded-[1rem]"
+                />
               </div>
             </div>
           </div>
