@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 type TeamMember = {
@@ -8,6 +9,11 @@ type TeamMember = {
   degree: string;
   summary: string;
   email: string;
+  linkedin: string;
+  photo: string;
+  photoPosition?: string;
+  accent: string;
+  badgeClass: string;
 };
 
 const mainContact = {
@@ -25,6 +31,10 @@ const teamMembers: TeamMember[] = [
     summary:
       "Computer Science student at King's College London with experience in software engineering, product development, and international youth policy engagement. Leads VERI's overall vision, concept design, and execution strategy, with a focus on building practical digital systems that improve trust, access, and economic inclusion.",
     email: "seyidalitunjay@gmail.com",
+    linkedin: "https://www.linkedin.com/in/tunjay-seyidali-30319722a/",
+    photo: "/team/tunjay-seyidali.jpg",
+    accent: "var(--cyan)",
+    badgeClass: "badge-c",
   },
   {
     name: "Amir Guliyev",
@@ -34,6 +44,11 @@ const teamMembers: TeamMember[] = [
     summary:
       "Computer Science student at King's College London with hands-on experience in backend development and technical project work. Supports VERI's technical design and prototype planning, helping translate the concept into a practical and scalable product workflow.",
     email: "amirrza777@gmail.com",
+    linkedin: "https://www.linkedin.com/in/amir-guliyev-442366255/",
+    photo: "/team/amir-guliyev.png",
+    photoPosition: "center 30%",
+    accent: "var(--purple)",
+    badgeClass: "badge-p",
   },
   {
     name: "Farhad Huseynli",
@@ -43,6 +58,10 @@ const teamMembers: TeamMember[] = [
     summary:
       "Economics and Management student at King's College London with experience in financial analysis, commercial thinking, and strategic planning. Leads VERI's partnership approach and growth strategy, focusing on market fit, external engagement, and long-term implementation pathways.",
     email: "farhadhuseynli06@gmail.com",
+    linkedin: "https://www.linkedin.com/in/farhad-huseynli-58ba81332/",
+    photo: "/team/farhad-huseynli.jpg",
+    accent: "var(--green)",
+    badgeClass: "badge-g",
   },
 ];
 
@@ -54,13 +73,7 @@ export const metadata: Metadata = {
 
 function EmailIcon() {
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className="h-4 w-4 stroke-current"
-      fill="none"
-      strokeWidth="1.8"
-    >
+    <svg viewBox="0 0 24 24" style={{ width: 15, height: 15 }} fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
       <path d="M4 7.5 12 13l8-5.5" />
       <rect x="3.25" y="5.25" width="17.5" height="13.5" rx="2.25" />
     </svg>
@@ -69,175 +82,233 @@ function EmailIcon() {
 
 function LinkedInIcon() {
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className="h-4 w-4 fill-current"
-    >
+    <svg viewBox="0 0 24 24" style={{ width: 15, height: 15 }} fill="currentColor" aria-hidden="true">
       <path d="M6.94 8.5A1.56 1.56 0 1 1 6.91 5.4a1.56 1.56 0 0 1 .03 3.1ZM5.58 9.74h2.7V18h-2.7V9.74Zm4.39 0h2.59v1.13h.04c.36-.68 1.24-1.39 2.56-1.39 2.74 0 3.24 1.8 3.24 4.14V18h-2.7v-3.93c0-.94-.02-2.15-1.31-2.15-1.31 0-1.51 1.02-1.51 2.08V18h-2.7V9.74Z" />
     </svg>
   );
 }
 
-function ContactAction({
-  href,
-  icon,
-  label,
-  detail,
-}: {
-  href: string;
-  icon: React.ReactNode;
-  label: string;
-  detail: string;
-}) {
-  return (
-    <a
-      href={href}
-      className="team-action transition hover:border-white/22 hover:bg-white/[0.08]"
-    >
-      <span className="team-action-icon">{icon}</span>
-      <span>
-        <span className="block text-sm font-medium text-white">{label}</span>
-        <span className="block text-xs text-white/55">{detail}</span>
-      </span>
-    </a>
-  );
-}
-
-function PendingAction() {
-  return (
-    <div className="team-action opacity-85">
-      <span className="team-action-icon">
-        <LinkedInIcon />
-      </span>
-      <span>
-        <span className="block text-sm font-medium text-white">LinkedIn</span>
-        <span className="block text-xs text-white/55">Link to be added</span>
-      </span>
-    </div>
-  );
-}
-
 export default function TeamPage() {
   return (
-    <div className="relative overflow-x-hidden">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#03101f]/88 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-sm font-semibold tracking-[0.24em] text-white">
-              V
-            </span>
+    <div style={{ position: "relative", zIndex: 1, overflowX: "hidden" }}>
+
+      {/* ── NAV ──────────────────────────────────── */}
+      <header style={{
+        position: "sticky", top: 0, zIndex: 100,
+        borderBottom: "1px solid rgba(0,232,245,0.09)",
+        background: "rgba(6,13,26,0.9)",
+        backdropFilter: "blur(22px)", WebkitBackdropFilter: "blur(22px)",
+      }}>
+        <div className="outer" style={{ height: 60, display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}>
+            <div style={{
+              width: 36, height: 36, borderRadius: 9,
+              border: "1px solid rgba(0,232,245,0.4)",
+              background: "linear-gradient(135deg, rgba(0,232,245,0.16), rgba(184,79,255,0.13))",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: "0.82rem", fontWeight: 900, color: "var(--cyan)",
+              fontFamily: "var(--font-mono)", boxShadow: "0 0 12px rgba(0,232,245,0.2)",
+            }}>V</div>
             <div>
-              <p className="text-sm font-semibold tracking-[0.24em] text-white">
-                VERI
-              </p>
-              <p className="text-xs text-white/55">
-                Verified Employment Records Infrastructure
-              </p>
+              <p style={{ margin: 0, fontSize: "0.8rem", fontWeight: 800, letterSpacing: "0.22em", color: "var(--cyan)", fontFamily: "var(--font-mono)" }}>VERI</p>
+              <p style={{ margin: 0, fontSize: "0.58rem", color: "rgba(219,234,254,0.4)" }}>Verified Employment Records</p>
             </div>
           </Link>
-
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-4 py-2 text-sm font-medium text-white transition hover:bg-white/[0.1]"
-          >
-            <span aria-hidden="true">←</span>
-            Return to home
-          </Link>
+          <Link href="/" className="btn-ghost" style={{ padding: "0.45rem 1.1rem", fontSize: "0.68rem" }}>← Home</Link>
         </div>
       </header>
 
-      <main className="mx-auto flex max-w-7xl flex-col gap-6 px-6 pb-24 pt-6 lg:px-8">
-        <section className="section-shell hero-grid overflow-hidden rounded-[2rem] px-6 py-10 md:px-10 md:py-14">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(110,168,255,0.18),_transparent_32%),radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.08),_transparent_22%)]" />
-          <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end">
-            <div className="fade-in-up">
-              <p className="section-label">Founding Team</p>
-              <h1 className="mt-4 max-w-4xl text-5xl font-semibold tracking-[-0.05em] text-white md:text-7xl">
-                The people building VERI across architecture, engineering, and
-                partnerships.
-              </h1>
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72 md:text-xl">
-                VERI is being shaped by a student-led founding team with serious
-                technical, commercial, and institutional ambition.
-              </p>
-            </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", paddingBottom: "5rem" }}>
 
-            <aside className="fade-in-up delay-2 rounded-[1.75rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.03))] p-6 shadow-[0_28px_80px_rgba(1,9,20,0.45)]">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#9ec5ff]">
-                Main contact
-              </p>
-              <div className="mt-5 space-y-4">
-                <a
-                  href={`mailto:${mainContact.email}`}
-                  className="block rounded-[1.25rem] border border-white/10 bg-white/[0.06] px-4 py-4 transition hover:bg-white/[0.1]"
-                >
-                  <p className="text-sm text-white/55">Email</p>
-                  <p className="mt-1 text-base text-white">{mainContact.email}</p>
-                </a>
-                <a
-                  href={`tel:${mainContact.phone}`}
-                  className="block rounded-[1.25rem] border border-white/10 bg-white/[0.06] px-4 py-4 transition hover:bg-white/[0.1]"
-                >
-                  <p className="text-sm text-white/55">Phone</p>
-                  <p className="mt-1 text-base text-white">
-                    {mainContact.phoneLabel}
-                  </p>
-                </a>
+        {/* ── HERO ─────────────────────────────────── */}
+        <section style={{ paddingTop: "4rem" }}>
+          <div className="outer">
+            <div className="g2-asym" style={{ alignItems: "end" }}>
+              <div className="fade-in-up">
+                <p className="label">Founding Team</p>
+                <h1 style={{
+                  fontSize: "clamp(2.4rem, 7vw, 5rem)", fontWeight: 900,
+                  letterSpacing: "-0.04em", lineHeight: 1.06, marginTop: "1rem",
+                  color: "var(--text)",
+                }}>
+                  The people<br />
+                  building{" "}
+                  <span style={{
+                    background: "linear-gradient(130deg, var(--cyan), var(--purple))",
+                    WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                  }}>VERI.</span>
+                </h1>
+                <p style={{ marginTop: "1.25rem", fontSize: "1rem", lineHeight: 1.8, color: "var(--muted)", maxWidth: 480 }}>
+                  A student-led founding team with serious technical, commercial, and institutional ambition — built across architecture, engineering, and partnerships.
+                </p>
+                <p style={{ marginTop: "1.5rem", fontFamily: "var(--font-mono)", fontSize: "0.6rem", color: "rgba(0,232,245,0.28)", letterSpacing: "0.08em" }}>
+                  TEAM_SIZE: 3 · KCL_LONDON · STAGE: IDEATION
+                </p>
               </div>
-            </aside>
+
+              {/* Contact aside */}
+              <div className="card fade-in-up delay-2" style={{ padding: "1.75rem" }}>
+                <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.62rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--cyan)", marginBottom: "1.25rem" }}>
+                  Main contact
+                </p>
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                  <a href={`mailto:${mainContact.email}`} className="card" style={{ padding: "1rem 1.25rem", display: "block", overflow: "hidden" }}>
+                    <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "var(--muted)", letterSpacing: "0.12em", marginBottom: "0.25rem" }}>EMAIL</p>
+                    <p style={{ fontSize: "0.82rem", color: "var(--text)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{mainContact.email}</p>
+                  </a>
+                  <a href={`tel:${mainContact.phone}`} className="card" style={{ padding: "1rem 1.25rem", display: "block" }}>
+                    <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "var(--muted)", letterSpacing: "0.12em", marginBottom: "0.25rem" }}>PHONE</p>
+                    <p style={{ fontSize: "0.82rem", color: "var(--text)" }}>{mainContact.phoneLabel}</p>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="section-shell rounded-[2rem] px-6 py-10 md:px-10 md:py-12">
-          <div className="fade-in-up">
-            <p className="section-label">Team Directory</p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-white md:text-5xl">
-              Meet Our Founding Team
+        {/* ── DIVIDER ─────────────────────────────── */}
+        <div className="outer"><hr className="divider" /></div>
+
+        {/* ── TEAM DIRECTORY ──────────────────────── */}
+        <section className="outer">
+          <div className="fade-in-up" style={{ marginBottom: "2.5rem" }}>
+            <p className="label">Team Directory</p>
+            <h2 style={{
+              fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 900,
+              letterSpacing: "-0.04em", color: "var(--text)",
+              marginTop: "1rem", lineHeight: 1.12,
+            }}>
+              Meet our{" "}
+              <span style={{
+                background: "linear-gradient(130deg, var(--cyan), var(--purple))",
+                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+              }}>founding team.</span>
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="g3">
             {teamMembers.map((member, index) => (
               <article
                 key={member.name}
-                className={`team-profile-card fade-in-up delay-${(index % 3) + 1}`}
+                className={`card fade-in-up delay-${(index % 3) + 1}`}
+                style={{ padding: "2rem", display: "flex", flexDirection: "column", gap: "0" }}
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="team-avatar">
-                    <span>{member.shortName}</span>
+                {/* Header row */}
+                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "1rem", marginBottom: "1.25rem" }}>
+                  <div style={{
+                    width: "4.8rem", height: "4.8rem", borderRadius: 14,
+                    border: `1px solid ${member.accent}45`,
+                    boxShadow: `0 0 20px ${member.accent}22`,
+                    overflow: "hidden", flexShrink: 0, position: "relative",
+                  }}>
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      fill
+                      style={{ objectFit: "cover", objectPosition: member.photoPosition ?? "center top" }}
+                      sizes="77px"
+                    />
                   </div>
-                  <div className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[0.68rem] font-medium uppercase tracking-[0.22em] text-[#b9d5ff]">
+                  <span className={`badge ${member.badgeClass}`} style={{ fontSize: "0.58rem", textAlign: "center", lineHeight: 1.3 }}>
                     {member.role}
-                  </div>
+                  </span>
                 </div>
 
-                <div className="flex flex-1 flex-col">
-                  <h3 className="mt-5 text-3xl font-semibold tracking-[-0.04em] text-white">
-                    {member.name}
-                  </h3>
-                  <p className="mt-3 text-xs uppercase tracking-[0.18em] text-white/45">
-                    {member.degree}
-                  </p>
-                  <p className="mt-5 text-sm leading-7 text-white/70">
-                    {member.summary}
-                  </p>
+                {/* Name */}
+                <h3 style={{
+                  fontSize: "clamp(1.35rem, 3vw, 1.75rem)", fontWeight: 800,
+                  letterSpacing: "-0.04em", color: "var(--text)",
+                  marginBottom: "0.4rem", lineHeight: 1.15,
+                }}>
+                  {member.name}
+                </h3>
 
-                  <div className="mt-6 flex flex-col gap-3">
-                    <ContactAction
-                      href={`mailto:${member.email}`}
-                      icon={<EmailIcon />}
-                      label="Email"
-                      detail={member.email}
-                    />
-                    <PendingAction />
-                  </div>
+                {/* Degree */}
+                <p style={{
+                  fontFamily: "var(--font-mono)", fontSize: "0.6rem",
+                  letterSpacing: "0.1em", textTransform: "uppercase",
+                  color: "rgba(219,234,254,0.35)", marginBottom: "1.25rem",
+                }}>
+                  {member.degree}
+                </p>
+
+                <hr className="divider" style={{ marginBottom: "1.25rem" }} />
+
+                {/* Summary */}
+                <p style={{ fontSize: "0.82rem", lineHeight: 1.75, color: "var(--muted)", flex: 1, marginBottom: "1.5rem" }}>
+                  {member.summary}
+                </p>
+
+                {/* Actions */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.55rem" }}>
+                  <a href={`mailto:${member.email}`} className="t-action" style={{ minWidth: 0 }}>
+                    <span className="t-icon"><EmailIcon /></span>
+                    <span style={{ minWidth: 0, overflow: "hidden" }}>
+                      <span style={{ display: "block", fontSize: "0.8rem", fontWeight: 600, color: "var(--text)" }}>Email</span>
+                      <span style={{ display: "block", fontSize: "0.7rem", color: "var(--muted)", fontFamily: "var(--font-mono)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{member.email}</span>
+                    </span>
+                  </a>
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="t-action">
+                    <span className="t-icon"><LinkedInIcon /></span>
+                    <span>
+                      <span style={{ display: "block", fontSize: "0.8rem", fontWeight: 600, color: "var(--text)" }}>LinkedIn</span>
+                      <span style={{ display: "block", fontSize: "0.7rem", color: "var(--muted)", fontFamily: "var(--font-mono)" }}>View profile</span>
+                    </span>
+                  </a>
                 </div>
               </article>
             ))}
           </div>
         </section>
-      </main>
+
+        {/* ── BOTTOM CTA ───────────────────────────── */}
+        <section className="outer" style={{ paddingTop: "1rem" }}>
+          <div style={{
+            padding: "3rem 2.5rem",
+            borderRadius: 20, border: "1px solid rgba(0,232,245,0.14)",
+            background: "rgba(8,22,48,0.6)",
+            position: "relative", overflow: "hidden",
+            display: "flex", flexWrap: "wrap", gap: "2rem",
+            alignItems: "center", justifyContent: "space-between",
+          }}>
+            <div style={{ position: "absolute", top: 0, left: "20%", right: "20%", height: 1, background: "linear-gradient(90deg, transparent, rgba(0,232,245,0.4), transparent)" }} />
+            <div className="fade-in-up">
+              <p className="label">Get Involved</p>
+              <h2 style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", fontWeight: 800, letterSpacing: "-0.03em", color: "var(--text)", marginTop: "0.75rem", lineHeight: 1.2 }}>
+                Interested in VERI's direction?
+              </h2>
+              <p style={{ fontSize: "0.88rem", lineHeight: 1.7, color: "var(--muted)", marginTop: "0.6rem", maxWidth: 420 }}>
+                We're in early dialogue with partners, researchers, and institutions. Reach out to start a conversation.
+              </p>
+            </div>
+            <div className="fade-in-up delay-2" style={{ display: "flex", gap: "0.85rem", flexWrap: "wrap" }}>
+              <a href={`mailto:${mainContact.email}`} className="btn"><span>Email the Team</span></a>
+              <Link href="/" className="btn-ghost">Back to Home</Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── FOOTER ──────────────────────────────── */}
+        <footer className="outer" style={{ paddingTop: "1rem" }}>
+          <hr className="divider" style={{ marginBottom: "1.5rem" }} />
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+              <span style={{
+                background: "linear-gradient(130deg, var(--cyan), var(--purple))",
+                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                fontWeight: 800, letterSpacing: "0.2em", fontFamily: "var(--font-mono)", fontSize: "0.8rem",
+              }}>VERI</span>
+              <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "rgba(219,234,254,0.25)" }}>
+                · Verified Employment Records Infrastructure
+              </span>
+            </div>
+            <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "rgba(219,234,254,0.25)" }}>
+              Early-stage concept · King's College London · 2025
+            </p>
+          </div>
+        </footer>
+
+      </div>
     </div>
   );
 }
