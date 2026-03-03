@@ -142,7 +142,7 @@ export default function TeamPage() {
                   A student-led founding team with serious technical, commercial, and institutional ambition — built across architecture, engineering, and partnerships.
                 </p>
                 <p style={{ marginTop: "1.5rem", fontFamily: "var(--font-mono)", fontSize: "0.6rem", color: "rgba(0,232,245,0.28)", letterSpacing: "0.08em" }}>
-                  TEAM_SIZE: 3 · KCL_LONDON · STAGE: IDEATION
+                  TEAM_SIZE: 3 · LONDON · STAGE: IDEATION
                 </p>
               </div>
 
@@ -303,7 +303,7 @@ export default function TeamPage() {
               </span>
             </div>
             <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "rgba(219,234,254,0.25)" }}>
-              Early-stage concept · King's College London · 2025
+              Early-stage concept · London · 2025
             </p>
           </div>
         </footer>

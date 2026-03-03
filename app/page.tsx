@@ -540,7 +540,7 @@ export default function Home() {
                 <span style={{ color: "rgba(219,234,254,0.4)" }}>One focused mission.</span>
               </h2>
               <p style={{ marginTop: "1rem", fontSize: "0.9rem", lineHeight: 1.8, color: "var(--muted)", maxWidth: 420 }}>
-                Computer Science and Economics graduates from King's College London, combining technical depth with strategic thinking.
+                A student-led founding team combining technical depth with strategic and commercial thinking.
               </p>
             </div>
             <div className="fade-in-up delay-2" style={{ flexShrink: 0 }}>
@@ -601,7 +601,7 @@ export default function Home() {
               </span>
             </div>
             <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "rgba(219,234,254,0.25)" }}>
-              Early-stage concept · King's College London · 2025
+              Early-stage concept · London · 2025
             </p>
           </div>
         </footer>
