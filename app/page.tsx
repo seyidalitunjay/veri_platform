@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const mainContact = {
@@ -147,42 +148,28 @@ export default function Home() {
       {/* ── NAV ─────────────────────────────────── */}
       <header style={{
         position: "sticky", top: 0, zIndex: 100,
-        borderBottom: "1px solid rgba(0,232,245,0.09)",
-        background: "rgba(6,13,26,0.9)",
-        backdropFilter: "blur(22px)",
-        WebkitBackdropFilter: "blur(22px)",
+        borderBottom: "1px solid rgba(255,255,255,0.06)",
+        background: "rgba(6,13,26,0.82)",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px)",
       }}>
-        <div className="outer" style={{ height: 60, display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
-          <a href="#top" style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}>
-            <div style={{
-              width: 36, height: 36, borderRadius: 9,
-              border: "1px solid rgba(0,232,245,0.4)",
-              background: "linear-gradient(135deg, rgba(0,232,245,0.16), rgba(184,79,255,0.13))",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "0.82rem", fontWeight: 900, color: "var(--cyan)",
-              fontFamily: "var(--font-mono)", boxShadow: "0 0 12px rgba(0,232,245,0.2)",
-            }}>V</div>
-            <div>
-              <p style={{ margin: 0, fontSize: "0.8rem", fontWeight: 800, letterSpacing: "0.22em", color: "var(--cyan)", fontFamily: "var(--font-mono)" }}>VERI</p>
-              <p style={{ margin: 0, fontSize: "0.58rem", color: "rgba(219,234,254,0.4)" }}>Verified Employment Records</p>
-            </div>
+        <div className="outer" style={{ height: 54, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <a href="#top" style={{ display: "flex", alignItems: "center" }}>
+            <Image src="/logo-white.png" alt="Veri." width={48} height={48} priority style={{ display: "block" }} />
           </a>
 
           <nav className="nav-links">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href} style={{
-                fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.1em",
-                textTransform: "uppercase", color: "rgba(219,234,254,0.5)", transition: "color 0.2s",
+                fontSize: "0.72rem", color: "rgba(219,234,254,0.45)", transition: "color 0.2s",
               }}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--cyan)")}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(219,234,254,0.5)")}
+                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.9)")}
+                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "rgba(219,234,254,0.45)")}
               >{item.label}</Link>
             ))}
           </nav>
 
-          <a href={`mailto:${mainContact.email}`} className="btn" style={{ padding: "0.45rem 1.1rem", fontSize: "0.65rem" }}>
-            <span>Contact</span>
-          </a>
+          <a href="#contact" className="btn-ghost" style={{ padding: "0.38rem 1rem", fontSize: "0.68rem" }}>Contact</a>
         </div>
       </header>
 
@@ -591,13 +578,9 @@ export default function Home() {
           <hr className="divider" style={{ marginBottom: "1.5rem" }} />
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem", flexWrap: "wrap" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-              <span style={{
-                background: "linear-gradient(130deg, var(--cyan), var(--purple))",
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-                fontWeight: 800, letterSpacing: "0.2em", fontFamily: "var(--font-mono)", fontSize: "0.8rem",
-              }}>VERI</span>
+              <Image src="/logo-white.png" alt="Veri." width={36} height={36} style={{ display: "block", opacity: 0.7 }} />
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "rgba(219,234,254,0.25)" }}>
-                · Verified Employment Records Infrastructure
+                Verified Employment Records Infrastructure
               </span>
             </div>
             <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "rgba(219,234,254,0.25)" }}>

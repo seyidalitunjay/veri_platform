@@ -95,24 +95,13 @@ export default function TeamPage() {
       {/* ── NAV ──────────────────────────────────── */}
       <header style={{
         position: "sticky", top: 0, zIndex: 100,
-        borderBottom: "1px solid rgba(0,232,245,0.09)",
-        background: "rgba(6,13,26,0.9)",
-        backdropFilter: "blur(22px)", WebkitBackdropFilter: "blur(22px)",
+        borderBottom: "1px solid rgba(255,255,255,0.06)",
+        background: "rgba(6,13,26,0.82)",
+        backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)",
       }}>
-        <div className="outer" style={{ height: 60, display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}>
-            <div style={{
-              width: 36, height: 36, borderRadius: 9,
-              border: "1px solid rgba(0,232,245,0.4)",
-              background: "linear-gradient(135deg, rgba(0,232,245,0.16), rgba(184,79,255,0.13))",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "0.82rem", fontWeight: 900, color: "var(--cyan)",
-              fontFamily: "var(--font-mono)", boxShadow: "0 0 12px rgba(0,232,245,0.2)",
-            }}>V</div>
-            <div>
-              <p style={{ margin: 0, fontSize: "0.8rem", fontWeight: 800, letterSpacing: "0.22em", color: "var(--cyan)", fontFamily: "var(--font-mono)" }}>VERI</p>
-              <p style={{ margin: 0, fontSize: "0.58rem", color: "rgba(219,234,254,0.4)" }}>Verified Employment Records</p>
-            </div>
+        <div className="outer" style={{ height: 54, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+            <Image src="/logo-white.png" alt="Veri." width={48} height={48} priority style={{ display: "block" }} />
           </Link>
           <Link href="/" className="btn-ghost" style={{ padding: "0.45rem 1.1rem", fontSize: "0.68rem" }}>← Home</Link>
         </div>
@@ -293,13 +282,9 @@ export default function TeamPage() {
           <hr className="divider" style={{ marginBottom: "1.5rem" }} />
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem", flexWrap: "wrap" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-              <span style={{
-                background: "linear-gradient(130deg, var(--cyan), var(--purple))",
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-                fontWeight: 800, letterSpacing: "0.2em", fontFamily: "var(--font-mono)", fontSize: "0.8rem",
-              }}>VERI</span>
+              <Image src="/logo-white.png" alt="Veri." width={36} height={36} style={{ display: "block", opacity: 0.7 }} />
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "rgba(219,234,254,0.25)" }}>
-                · Verified Employment Records Infrastructure
+                Verified Employment Records Infrastructure
               </span>
             </div>
             <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "rgba(219,234,254,0.25)" }}>
