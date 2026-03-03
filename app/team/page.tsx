@@ -26,7 +26,7 @@ const teamMembers: TeamMember[] = [
   {
     name: "Tunjay Seyidali",
     shortName: "TS",
-    role: "Team Lead & Chief Architect",
+    role: "Team Lead & Founder",
     degree: "BSc Computer Science, King's College London",
     summary:
       "Computer Science student at King's College London with experience in software engineering, product development, and international youth policy engagement. Leads VERI's overall vision, concept design, and execution strategy, with a focus on building practical digital systems that improve trust, access, and economic inclusion.",
