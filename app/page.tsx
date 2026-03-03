@@ -154,8 +154,10 @@ export default function Home() {
         WebkitBackdropFilter: "blur(20px)",
       }}>
         <div className="outer" style={{ height: 54, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <a href="#top" style={{ display: "flex", alignItems: "center" }}>
-            <Image src="/logo-white.png" alt="Veri." width={48} height={48} priority style={{ display: "block" }} />
+          <a href="#top" style={{ textDecoration: "none" }}>
+            <span style={{ fontFamily: "var(--font-sans)", fontWeight: 800, fontSize: "1.35rem", letterSpacing: "-0.03em", color: "white" }}>
+              Veri<span style={{ color: "#4B5CF6" }}>.</span>
+            </span>
           </a>
 
           <nav className="nav-links">
@@ -578,7 +580,9 @@ export default function Home() {
           <hr className="divider" style={{ marginBottom: "1.5rem" }} />
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem", flexWrap: "wrap" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-              <Image src="/logo-white.png" alt="Veri." width={36} height={36} style={{ display: "block", opacity: 0.7 }} />
+              <span style={{ fontFamily: "var(--font-sans)", fontWeight: 800, fontSize: "1rem", letterSpacing: "-0.03em", color: "rgba(255,255,255,0.55)" }}>
+                Veri<span style={{ color: "#4B5CF6" }}>.</span>
+              </span>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "rgba(219,234,254,0.25)" }}>
                 Verified Employment Records Infrastructure
               </span>

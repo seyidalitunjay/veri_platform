@@ -101,7 +101,9 @@ export default function TeamPage() {
       }}>
         <div className="outer" style={{ height: 54, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Link href="/" style={{ display: "flex", alignItems: "center" }}>
-            <Image src="/logo-white.png" alt="Veri." width={48} height={48} priority style={{ display: "block" }} />
+            <span style={{ fontFamily: "var(--font-sans)", fontWeight: 800, fontSize: "1.35rem", letterSpacing: "-0.03em", color: "white" }}>
+              Veri<span style={{ color: "#4B5CF6" }}>.</span>
+            </span>
           </Link>
           <Link href="/" className="btn-ghost" style={{ padding: "0.45rem 1.1rem", fontSize: "0.68rem" }}>← Home</Link>
         </div>
@@ -282,7 +284,9 @@ export default function TeamPage() {
           <hr className="divider" style={{ marginBottom: "1.5rem" }} />
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem", flexWrap: "wrap" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-              <Image src="/logo-white.png" alt="Veri." width={36} height={36} style={{ display: "block", opacity: 0.7 }} />
+              <span style={{ fontFamily: "var(--font-sans)", fontWeight: 800, fontSize: "1rem", letterSpacing: "-0.03em", color: "rgba(255,255,255,0.55)" }}>
+                Veri<span style={{ color: "#4B5CF6" }}>.</span>
+              </span>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", color: "rgba(219,234,254,0.25)" }}>
                 Verified Employment Records Infrastructure
               </span>
